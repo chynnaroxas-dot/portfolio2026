@@ -97,6 +97,12 @@
             align-items: center;
         }
 
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .hero-title {
             font-size: 4.2rem;
             line-height: 0.95;
@@ -419,142 +425,60 @@
         .quote-text {
             font-size: 1.1rem;
             font-style: italic;
-            color: #333;
+            color: var(--text-dark);
             margin-bottom: 20px;
-            line-height: 1.7;
         }
 
         .quote-author {
             font-weight: 700;
             color: var(--primary-green);
-            font-size: 1rem;
         }
 
-        /* STATEMENT BANNER */
-        .statement-banner {
-            background-color: var(--primary-green);
-            color: var(--soft-sage);
-            text-align: center;
-            padding: 70px 20px;
-            border-radius: 20px;
-            margin: 60px 0;
-        }
-
-        .statement-banner h2 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-        }
-
-        /* FLOATING CONTACT WIDGET / FOOTER */
-        footer {
-            background-color: var(--primary-green);
-            color: #FFF;
-            padding: 70px 0 40px 0;
-            text-align: center;
-        }
-
-        .contact-card {
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            max-width: 500px;
-            margin: 0 auto 40px auto;
-            padding: 35px;
-            border-radius: 16px;
-        }
-
-        .contact-card a {
-            color: var(--soft-sage);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .contact-item {
-            margin-bottom: 15px;
-        }
-
-        /* MODAL POPUP */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: #FFF;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .quote-role {
+            font-size: 0.85rem;
             color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 3rem; }
-            .statement-banner h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV BANNER -->
-    <nav class="top-nav">
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav">
         <div class="container nav-content">
-            <div class="nav-brand">PORTFOLIO | ADMINISTRATIVE SUPPORT SPECIALIST</div>
-            <div class="year-tag">20(26)</div>
+            <span class="nav-brand">CHYNNA ROXAS</span>
+            <span class="year-tag">2026 PORTFOLIO</span>
         </div>
-    </nav>
+    </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container hero-grid">
             <div>
-                <h1 class="hero-title">CHYNNA<br>ROXAS</h1>
-                <div class="hero-subtitle">Available for Remote Opportunities</div>
-                <div class="hero-statement">
-                    Helping executives and businesses stay organized, efficient, and client-focused.
-                </div>
+                <h1 class="hero-title">Chynna<br>Roxas</h1>
+                <p class="hero-subtitle">Administrative Support Specialist</p>
+                <p class="hero-statement">Streamlining Operations &amp; Elevating Executive Productivity</p>
             </div>
             <div class="hero-card">
-                <h3>INTRODUCTION</h3>
-                <p>Hi! I'm Chynna. I help businesses stay organized, connected, and moving forward through thoughtful support, strategic coordination, and creative problem-solving. With experience in executive assistance, operations, sales, customer experience, and content creation, I combine structure with creativity to support business growth and build meaningful client relationships.</p>
+                <h3>OVERVIEW</h3>
+                <p>Dedicated Administrative Support Specialist with expertise in managing executive schedules, optimizing operational workflows, and delivering seamless project coordination.</p>
             </div>
         </div>
     </section>
 
     <!-- KEY METRICS -->
-    <section class="metrics-section">
-        <div class="container">
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-num">7+</div>
-                    <div class="metric-desc">Years Experience</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-num">+60%</div>
-                    <div class="metric-desc">Sales Growth Contributed</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-num">U.S.</div>
-                    <div class="metric-desc">Clients Support Experience</div>
-                </div>
+    <section class="metrics-section container">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-num">5+</div>
+                <div class="metric-desc">Years Experience</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-num">98%</div>
+                <div class="metric-desc">Efficiency Rating</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-num">500+</div>
+                <div class="metric-desc">Projects Handled</div>
             </div>
         </div>
     </section>
@@ -563,238 +487,65 @@
     <section class="pillars-section">
         <div class="container">
             <div class="section-header">
-                <h2>WHAT I BRING</h2>
+                <h2>What I Bring</h2>
             </div>
             <div class="pillars-grid">
                 <div class="pillar-card">
-                    <h3>Structure</h3>
-                    <p>Keeping tasks, projects, and priorities organized and moving forward.</p>
+                    <h3>Efficiency</h3>
+                    <p>Optimizing daily operations and eliminating administrative bottlenecks.</p>
                 </div>
                 <div class="pillar-card">
-                    <h3>Connection</h3>
-                    <p>Building strong relationships with clients, teams, and business partners.</p>
+                    <h3>Precision</h3>
+                    <p>Meticulous attention to detail across calendar management and documentation.</p>
                 </div>
                 <div class="pillar-card">
-                    <h3>Creativity</h3>
-                    <p>Bringing ideas to life through practical solutions and polished visual content.</p>
+                    <h3>Communication</h3>
+                    <p>Clear, professional liaison between stakeholders, executives, and clients.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MY SERVICES -->
-    <section class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: var(--primary-green);">MY SERVICES</h2>
+    <!-- SERVICES -->
+    <section class="services-section container">
+        <div class="section-header">
+            <h2>Core Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Executive Assistance</h3>
+                <ul>
+                    <li>Calendar &amp; Schedule Management</li>
+                    <li>Travel Coordination &amp; Itineraries</li>
+                    <li>Email Inbox Triage</li>
+                </ul>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Executive & Administrative Support</h3>
-                    <ul>
-                        <li>Manage schedules, communications, documentation, and day-to-day priorities</li>
-                        <li>Coordinate projects, follow-ups, and tasks while keeping everything organized</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Business Operations & Sales</h3>
-                    <ul>
-                        <li>Support daily operations, streamline workflows, and coordinate with teams</li>
-                        <li>Drive client acquisition through consultations, follow-ups, and solutions</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Client Success & Relationship Management</h3>
-                    <ul>
-                        <li>Build strong client relationships through responsive communication</li>
-                        <li>Handle inquiries, concerns, and complex requests with positive outcomes</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Customer Experience & Sales Support</h3>
-                    <ul>
-                        <li>Guide customers from initial inquiry through booking and after-sales support</li>
-                        <li>Identify customer needs and recommend tailored solutions</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Content & Visual Support</h3>
-                    <ul>
-                        <li>Create simple, polished client-facing graphics and promotional materials</li>
-                        <li>Design customized maps, posters, newsletters, vouchers, and signage</li>
-                    </ul>
-                </div>
+            <div class="service-card">
+                <h3>Operations Support</h3>
+                <ul>
+                    <li>Process Optimization</li>
+                    <li>Data Entry &amp; Record Maintenance</li>
+                    <li>Document Preparation &amp; Formatting</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- INTERACTIVE WORK PROCESS -->
-    <section class="container">
-        <div class="process-section">
-            <div class="section-header">
-                <h2 style="color: var(--primary-green);">WORK PROCESS</h2>
-                <p style="color: #666; margin-top: 5px;">"Understand first. Support with purpose."</p>
-            </div>
-            <div class="container">
-                <div class="process-steps">
-                    <div class="step-card active" onclick="selectStep(this, 'Learn the business, goals, audience, and main priorities before taking action.')">
-                        <div class="step-icon">🔍</div>
-                        <div class="step-title">Understand & Plan</div>
-                        <div class="step-desc">Learn business goals & priorities.</div>
-                    </div>
-                    <div class="step-card" onclick="selectStep(this, 'Create a structured approach and workflow to handle tasks efficiently.')">
-                        <div class="step-icon">📋</div>
-                        <div class="step-title">Organize & Execute</div>
-                        <div class="step-desc">Bring structure to everyday operations.</div>
-                    </div>
-                    <div class="step-card" onclick="selectStep(this, 'Maintain transparent communication across team members, clients, and partners.')">
-                        <div class="step-icon">⚙️</div>
-                        <div class="step-title">Communicate & Collaborate</div>
-                        <div class="step-desc">Manage tasks & coordinate projects.</div>
-                    </div>
-                    <div class="step-card" onclick="selectStep(this, 'Follow through, solve problems, and continuously refine processes for better results.')">
-                        <div class="step-icon">📈</div>
-                        <div class="step-title">Deliver & Improve</div>
-                        <div class="step-desc">Solve problems & follow through.</div>
-                    </div>
-                </div>
-            </div>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section container">
+        <div class="section-header">
+            <h2>Endorsements</h2>
+        </div>
+        <div class="tab-buttons">
+            <button class="tab-btn active">Executive Leadership</button>
+            <button class="tab-btn">Operations</button>
+        </div>
+        <div class="testimonial-display">
+            <p class="quote-text">"Chynna transformed how our leadership team operates day-to-day. Her attention to detail and proactive scheduling saved us countless hours every week."</p>
+            <div class="quote-author">Executive Director</div>
+            <div class="quote-role">Operations &amp; Client Success</div>
         </div>
     </section>
 
-    <!-- CREATIVE SIDE PROJECTS / GRAPHIC SHOWCASE -->
-    <section class="projects-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: var(--primary-green);">CREATIVE SIDE PROJECTS</h2>
-            </div>
-            <div class="portfolio-gallery">
-                <div class="gallery-item" onclick="openModal('Busy Doesn\'t Always Mean Productive', 'A productivity and VA promotional graphic built for Remote Nomads.')">
-                    <div class="item-preview" style="background-color: #2B5A4B; color: #FFF;">PROD HACK</div>
-                    <div class="item-info">
-                        <h4>Productivity Hack Graphic</h4>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('San Francisco VIP Guidebook', 'Social media graphic created for Extranomical Tours highlighting local VIP experiences.')">
-                    <div class="item-preview" style="background-color: #D4A373; color: #FFF;">SF GUIDE</div>
-                    <div class="item-info">
-                        <h4>San Francisco VIP Tour Graphic</h4>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('Alcatraz Island Visitor Guide', 'Informational promotional graphic designed for travel booking clients.')">
-                    <div class="item-preview" style="background-color: #1C3F34; color: #FFF;">ALCATRAZ</div>
-                    <div class="item-info">
-                        <h4>Alcatraz Visitor Guide</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS WITH FILTER TABS -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: var(--primary-green);">TESTIMONIALS</h2>
-            </div>
-
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="showTestimonial('extranomical', this)">Extranomical Tours</button>
-                <button class="tab-btn" onclick="showTestimonial('tigerair', this)">Tiger Air</button>
-                <button class="tab-btn" onclick="showTestimonial('govtech', this)">GovTech Academy</button>
-                <button class="tab-btn" onclick="showTestimonial('wfs', this)">WFS</button>
-            </div>
-
-            <div class="testimonial-display" id="testimonial-box">
-                <p class="quote-text" id="quote-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
-                <p class="quote-author" id="quote-author">— Hazel S., Assistant Manager (Extranomical Tours)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATEMENT BANNER -->
-    <div class="container">
-        <div class="statement-banner">
-            <h2>UNDERSTAND FIRST.<br>SUPPORT WITH PURPOSE.</h2>
-        </div>
-    </div>
-
-    <!-- FOOTER / CONTACT ME -->
-    <footer>
-        <div class="container">
-            <h2 style="margin-bottom: 25px; font-size: 1.8rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                LET'S WORK TOGETHER TO BRING YOUR IDEAS TO LIFE, STRENGTHEN YOUR BUSINESS, AND KEEP THINGS MOVING FORWARD.
-            </h2>
-            <div class="contact-card">
-                <div class="contact-item">📞 <a href="tel:+639776135391">+63 977 613 5391</a></div>
-                <div class="contact-item">📧 <a href="mailto:chynnaroxas@gmail.com">chynnaroxas@gmail.com</a></div>
-                <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/nicole-chynna-roxas/" target="_blank">LinkedIn Profile</a></div>
-            </div>
-            <p style="opacity: 0.6; font-size: 0.85rem;">© 2026 Chynna Roxas. Administrative Support Specialist Portfolio.</p>
-        </div>
-    </footer>
-
-    <!-- MODAL WINDOW FOR SIDE PROJECTS -->
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h3 id="modalTitle" style="color: var(--primary-green); margin-bottom: 15px;"></h3>
-            <p id="modalDesc" style="color: #444; font-size: 1rem;"></p>
-        </div>
-    </div>
-
-    <script>
-        // Interactive Step Selector
-        function selectStep(element, description) {
-            document.querySelectorAll('.step-card').forEach(card => card.classList.remove('active'));
-            element.classList.add('active');
-        }
-
-        // Testimonial Filtering Data
-        const testimonials = {
-            extranomical: {
-                text: `"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."`,
-                author: "— Hazel S., Assistant Manager (Extranomical Tours)"
-            },
-            tigerair: {
-                text: `"I worked very closely with her. Chin has excelled in her role as a customer service rep and even got promoted to be part of the back office team. Exhibiting one of the highest level of productivity I have ever seen."`,
-                author: "— Shobe I., Team Lead (Tiger Air)"
-            },
-            govtech: {
-                text: `"Just wanted to give your team a shout-out! Chynna is absolutely on top of it! She's quick to respond and even quicker to troubleshoot and find solutions. It's truly great to be part of such a well-run team."`,
-                author: "— Finn F., Sales Manager (GovTech Academy)"
-            },
-            wfs: {
-                text: `"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself a rockstar @SB and we appreciate her."`,
-                author: "— Brenden B., Team Manager (WFS)"
-            }
-        };
-
-        function showTestimonial(key, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            document.getElementById('quote-text').innerText = testimonials[key].text;
-            document.getElementById('quote-author').innerText = testimonials[key].author;
-        }
-
-        // Project Modal Logic
-        function openModal(title, desc) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDesc').innerText = desc;
-            document.getElementById('projectModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('projectModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            let modal = document.getElementById('projectModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
