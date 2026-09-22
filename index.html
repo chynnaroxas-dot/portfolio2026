@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicole Chynna Roxas | Client Success Specialist & Executive Support</title>
+    <title>Chynna Roxas | Administrative Support Specialist</title>
     <style>
-        /* GLOCK GROTESK 2.0 FONT DEFINITION */
-        /* Update the url(...) paths below to point to where your font files are hosted */
+        /* GLOCK GROTESK 2.0 FONT DECLARATION */
         @font-face {
             font-family: 'Glock Grotesk 2.0';
             src: url('fonts/GlockGrotesk2.0-Bold.woff2') format('woff2'),
@@ -16,16 +15,14 @@
             font-display: swap;
         }
 
-        /* COLOR PALETTE FROM PORTFOLIO */
         :root {
-            --primary-bg: #1C3F34;      /* Deep Forest Green */
-            --canvas-bg: #EFEFE8;       /* Warm Off-White Canvas */
-            --card-bg: #FFFFFF;         /* Pure White */
-            --text-dark: #111111;       /* Dark Charcoal */
-            --text-light: #FFFFFF;      /* Light Text */
-            --accent-green: #2B5A4B;    /* Muted Forest Accent */
-            --soft-text: #C3DFD5;       /* Light Sage Text */
-            --button-gold: #D4A373;     /* Accent Button Color */
+            --primary-green: #1C3F34;
+            --accent-green: #2B5A4B;
+            --canvas-bg: #EFEFE8;
+            --card-bg: #FFFFFF;
+            --text-dark: #111111;
+            --soft-sage: #C3DFD5;
+            --border-color: rgba(0,0,0,0.08);
         }
 
         * {
@@ -42,130 +39,111 @@
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* HERO HEADER */
-        header {
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            padding: 70px 20px 90px 20px;
-        }
-
-        .hero-flex-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            text-align: left;
-        }
-
-        /* PROFILE PHOTO STYLING */
-        .profile-photo-container {
-            flex-shrink: 0;
-        }
-
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--soft-text);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .hero-text-content {
-            flex-grow: 1;
-        }
-
-        .header-tag {
-            font-size: 0.85rem;
-            letter-spacing: 2px;
+        h1, h2, h3, .glock-heading, .brand-header {
+            font-family: 'Glock Grotesk 2.0', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             text-transform: uppercase;
-            color: var(--soft-text);
-            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* TOP NAVIGATION / HEADER BANNER */
+        .top-nav {
+            background-color: var(--canvas-bg);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--primary-green);
+        }
+
+        .year-tag {
+            background-color: var(--primary-green);
+            color: #FFF;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
             font-weight: 600;
         }
 
-        /* NAME TITLE STYLED WITH GLOCK GROTESK 2.0 */
-        h1 {
-            font-family: 'Glock Grotesk 2.0', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-            font-weight: 700;
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--canvas-bg);
+            padding: 60px 0 40px 0;
         }
 
-        .subtitle {
-            font-size: 1.15rem;
-            color: var(--soft-text);
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 4.2rem;
+            line-height: 0.95;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-green);
             margin-bottom: 15px;
         }
 
-        .hero-banner {
-            font-size: 1.05rem;
+        .hero-statement {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 30px;
+            color: #444;
             font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 1.4;
-            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .availability-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #FFFFFF;
-            margin-bottom: 25px;
-        }
-
-        /* ACTION BUTTONS */
-        .header-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease-in-out;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background-color: var(--soft-text);
-            color: var(--primary-bg);
-        }
-
-        .btn-primary:hover {
-            background-color: #FFFFFF;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--soft-text);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* KEY METRICS OVERLAP */
-        .metrics-wrapper {
-            margin-top: -40px;
+        .hero-card {
+            background-color: var(--primary-green);
+            color: #FFF;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             position: relative;
-            z-index: 10;
+        }
+
+        .hero-card h3 {
+            color: var(--soft-sage);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* KEY METRICS GRID */
+        .metrics-section {
+            padding: 40px 0;
         }
 
         .metrics-grid {
@@ -176,75 +154,74 @@
 
         .metric-card {
             background-color: var(--card-bg);
-            padding: 25px 20px;
-            border-radius: 12px;
+            padding: 30px 20px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
         }
 
-        .metric-number {
-            font-size: 2.2rem;
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .metric-num {
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--primary-bg);
-            margin-bottom: 5px;
+            color: var(--primary-green);
+            line-height: 1;
+            margin-bottom: 8px;
         }
 
-        .metric-label {
+        .metric-desc {
             font-size: 0.9rem;
-            color: #555555;
-            font-weight: 500;
+            color: #555;
+            font-weight: 600;
         }
 
-        /* GENERAL SECTIONS */
-        section {
+        /* WHAT I BRING PILLARS */
+        .pillars-section {
+            background-color: var(--primary-green);
+            color: #FFF;
             padding: 70px 0;
+            margin: 40px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
         }
 
-        .section-title {
+        .section-header h2 {
             font-size: 2.2rem;
-            color: var(--primary-bg);
             letter-spacing: -0.5px;
-            margin-bottom: 10px;
         }
 
-        /* ABOUT ME */
-        .about-box {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #333;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        /* WHAT I BRING PILLARS */
         .pillars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .pillar-card {
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            padding: 30px 25px;
-            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 35px 25px;
+            border-radius: 14px;
             text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            background-color: rgba(255, 255, 255, 0.12);
         }
 
         .pillar-card h3 {
-            font-size: 1.3rem;
-            color: var(--soft-text);
-            margin-bottom: 10px;
+            color: var(--soft-sage);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
         }
 
         .pillar-card p {
@@ -252,24 +229,35 @@
             opacity: 0.9;
         }
 
-        /* SERVICES GRID */
+        /* SERVICES SECTION */
+        .services-section {
+            padding: 60px 0;
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .service-card {
             background-color: var(--card-bg);
             padding: 30px;
-            border-radius: 12px;
-            border-top: 4px solid var(--primary-bg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-radius: 16px;
+            border-left: 5px solid var(--primary-green);
+            border: 1px solid var(--border-color);
+            border-left-width: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
         }
 
         .service-card h3 {
             font-size: 1.25rem;
-            color: var(--primary-bg);
+            color: var(--primary-green);
             margin-bottom: 15px;
         }
 
@@ -278,255 +266,305 @@
         }
 
         .service-card li {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             margin-bottom: 10px;
             color: #444;
             position: relative;
-            padding-left: 18px;
+            padding-left: 20px;
         }
 
         .service-card li::before {
             content: "+";
-            color: var(--primary-bg);
+            color: var(--primary-green);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
-        /* BANNER STATEMENT SECTION */
-        .statement-section {
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .statement-text {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-            color: var(--soft-text);
-            text-transform: uppercase;
-        }
-
-        /* WORK PROCESS */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .process-step {
+        /* INTERACTIVE WORK PROCESS */
+        .process-section {
+            padding: 60px 0;
             background-color: var(--card-bg);
-            padding: 25px 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-bg);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-radius: 20px;
+            margin: 40px 0;
         }
 
-        .process-step h4 {
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            background-color: var(--canvas-bg);
+            padding: 25px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .step-card.active, .step-card:hover {
+            background-color: var(--primary-green);
+            color: #FFF;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
             font-size: 1.1rem;
-            color: var(--primary-bg);
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .process-step p {
-            font-size: 0.9rem;
-            color: #555;
+        .step-card.active .step-title, .step-card:hover .step-title {
+            color: var(--soft-sage);
         }
 
-        /* CONTINUOUS SCROLLING TESTIMONIALS */
-        .testimonials-section {
-            background-color: #E2E2DA;
-            overflow: hidden;
-            padding: 70px 0;
+        .step-desc {
+            font-size: 0.88rem;
+            line-height: 1.4;
         }
 
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+        /* SIDE PROJECTS / PORTFOLIO SHOWCASE MODAL */
+        .projects-section {
+            padding: 60px 0;
         }
 
-        .marquee-track {
-            display: flex;
-            gap: 25px;
-            width: max-content;
-            animation: scrollFromRight 35s linear infinite;
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .marquee-container:hover .marquee-track {
-            animation-play-state: paused;
-        }
-
-        .testimonial-card {
+        .gallery-item {
             background-color: var(--card-bg);
-            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            width: 350px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .testimonial-text {
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .item-preview {
+            height: 180px;
+            background-color: #DDD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #666;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item-info {
+            padding: 15px;
+        }
+
+        .item-info h4 {
+            font-size: 1rem;
+            color: var(--primary-green);
+        }
+
+        /* INTERACTIVE TESTIMONIALS WITH FILTER TABS */
+        .testimonials-section {
+            padding: 60px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-green);
+            color: #FFF;
+        }
+
+        .testimonial-display {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            min-height: 200px;
+        }
+
+        .quote-text {
+            font-size: 1.1rem;
             font-style: italic;
             color: #333;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
 
-        .testimonial-author {
-            margin-top: 20px;
+        .quote-author {
             font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--primary-bg);
+            color: var(--primary-green);
+            font-size: 1rem;
         }
 
-        .testimonial-role {
-            font-weight: 400;
-            color: #666;
-            font-size: 0.85rem;
+        /* STATEMENT BANNER */
+        .statement-banner {
+            background-color: var(--primary-green);
+            color: var(--soft-sage);
+            text-align: center;
+            padding: 70px 20px;
+            border-radius: 20px;
+            margin: 60px 0;
         }
 
-        @keyframes scrollFromRight {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+        .statement-banner h2 {
+            font-size: 2.8rem;
+            line-height: 1.2;
         }
 
-        /* FOOTER / CONTACT */
+        /* FLOATING CONTACT WIDGET / FOOTER */
         footer {
-            background-color: var(--primary-bg);
-            color: var(--text-light);
-            padding: 80px 20px 40px 20px;
+            background-color: var(--primary-green);
+            color: #FFF;
+            padding: 70px 0 40px 0;
             text-align: center;
         }
 
-        .footer-heading {
-            font-size: 1.8rem;
-            max-width: 650px;
-            margin: 0 auto 30px auto;
-            line-height: 1.3;
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            padding: 35px;
+            border-radius: 16px;
         }
 
-        .contact-box {
-            background-color: rgba(255, 255, 255, 0.08);
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        .contact-card a {
+            color: var(--soft-sage);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .contact-item {
-            font-size: 1.05rem;
             margin-bottom: 15px;
         }
 
-        .contact-item a {
-            color: var(--soft-text);
-            text-decoration: none;
-            font-weight: 600;
+        /* MODAL POPUP */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
+        .modal-content {
+            background-color: #FFF;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
         }
 
-        .copyright {
-            font-size: 0.85rem;
-            opacity: 0.5;
-            margin-top: 50px;
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
         }
 
         @media (max-width: 768px) {
-            .hero-flex-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header-buttons {
-                justify-content: center;
-            }
-            h1 { font-size: 2.2rem; }
-            .hero-banner { font-size: 1.1rem; }
-            .about-box { padding: 25px; }
-            .testimonial-card { width: 290px; }
-            .statement-text { font-size: 2rem; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3rem; }
+            .statement-banner h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO HEADER -->
-    <header>
-        <div class="container">
-            <div class="hero-flex-container">
-                <!-- PROFILE PHOTO ON LEFT SIDE -->
-                <div class="profile-photo-container">
-                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHGKwXdgPaqPQ/profile-displayphoto-scale_400_400/B4DaDEhovOKsAg-/0/1790003548619?e=1791417600&v=beta&t=hZN3vk6c0DT9Hzebh7ue6f9ROjBUPfKzLi0JvPzrEQY" alt="Nicole Chynna Roxas" class="profile-photo">
-                </div>
+    <!-- NAV BANNER -->
+    <nav class="top-nav">
+        <div class="container nav-content">
+            <div class="nav-brand">PORTFOLIO | ADMINISTRATIVE SUPPORT SPECIALIST</div>
+            <div class="year-tag">20(26)</div>
+        </div>
+    </nav>
 
-                <!-- TEXT AND BUTTONS ON RIGHT SIDE -->
-                <div class="hero-text-content">
-                    <div class="header-tag">Portfolio 2026 Edition</div>
-                    <h1>NICOLE CHYNNA ROXAS</h1>
-                    <div class="subtitle">Client Success Specialist | Executive & Business Operations</div>
-                    <div class="hero-banner">
-                        HELPING EXECUTIVES AND BUSINESSES STAY ORGANIZED, EFFICIENT, AND CLIENT-FOCUSED.
-                    </div>
-                    <div>
-                        <span class="availability-badge">Available for Remote Opportunities</span>
-                    </div>
-
-                    <!-- CLICKABLE PORTFOLIO, RESUME, AND CALENDAR BUTTONS -->
-                    <div class="header-buttons">
-                        <a href="https://docs.google.com/document/d/1zQVMOPo9lKavmMnPfhKnAb-WStSBSO3QhkEJdzu14Ow/edit?usp=sharing" target="_blank" class="btn btn-primary">📄 View Resume</a>
-                        <a href="https://canva.link/chynnaroaxs" target="_blank" class="btn btn-secondary">📁 View Canva Portfolio</a>
-                        <a href="https://calendar.app.google/yEeHbqUXLboeQCgx8" target="_blank" class="btn btn-primary">📅 Book Meeting</a>
-                    </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1 class="hero-title">CHYNNA<br>ROXAS</h1>
+                <div class="hero-subtitle">Available for Remote Opportunities</div>
+                <div class="hero-statement">
+                    Helping executives and businesses stay organized, efficient, and client-focused.
                 </div>
             </div>
+            <div class="hero-card">
+                <h3>INTRODUCTION</h3>
+                <p>Hi! I'm Chynna. I help businesses stay organized, connected, and moving forward through thoughtful support, strategic coordination, and creative problem-solving. With experience in executive assistance, operations, sales, customer experience, and content creation, I combine structure with creativity to support business growth and build meaningful client relationships.</p>
+            </div>
         </div>
-    </header>
+    </section>
 
     <!-- KEY METRICS -->
-    <div class="container metrics-wrapper">
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-number">7+ Years</div>
-                <div class="metric-label">Professional Experience</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number">+60%</div>
-                <div class="metric-label">Sales Growth Contributed</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number">U.S. Clients</div>
-                <div class="metric-label">Experience Supporting & Communicating</div>
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-num">7+</div>
+                    <div class="metric-desc">Years Experience</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">+60%</div>
+                    <div class="metric-desc">Sales Growth Contributed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-num">U.S.</div>
+                    <div class="metric-desc">Clients Support Experience</div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- INTRODUCTION / ABOUT ME -->
-    <section>
+    <!-- WHAT I BRING PILLARS -->
+    <section class="pillars-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Me</h2>
+                <h2>WHAT I BRING</h2>
             </div>
-            <div class="about-box">
-                <p>Hi! I'm Chynna. I help businesses stay organized, connected, and moving forward through thoughtful support, strategic coordination, and creative problem-solving. With experience in executive assistance, operations, sales, customer experience, and content creation, I combine structure with creativity to support business growth and build meaningful client relationships. I'm passionate about turning ideas into action and finding practical ways to make everyday business processes more efficient.</p>
-            </div>
-
-            <!-- WHAT I BRING PILLARS -->
             <div class="pillars-grid">
                 <div class="pillar-card">
                     <h3>Structure</h3>
@@ -545,190 +583,218 @@
     </section>
 
     <!-- MY SERVICES -->
-    <section style="background-color: #E2E2DA;">
+    <section class="services-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Services</h2>
+                <h2 style="color: var(--primary-green);">MY SERVICES</h2>
             </div>
             <div class="services-grid">
-                
                 <div class="service-card">
                     <h3>Executive & Administrative Support</h3>
                     <ul>
                         <li>Manage schedules, communications, documentation, and day-to-day priorities</li>
-                        <li>Coordinate projects, follow-ups, and tasks while keeping everything organized and on track</li>
+                        <li>Coordinate projects, follow-ups, and tasks while keeping everything organized</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
-                    <h3>Business Operations & Sales Support</h3>
+                    <h3>Business Operations & Sales</h3>
                     <ul>
-                        <li>Support daily operations, streamline workflows, and coordinate with teams and external partners</li>
-                        <li>Drive client acquisition and sales through consultations, follow-ups, and customized solutions</li>
+                        <li>Support daily operations, streamline workflows, and coordinate with teams</li>
+                        <li>Drive client acquisition through consultations, follow-ups, and solutions</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <h3>Client Success & Relationship Management</h3>
                     <ul>
-                        <li>Build strong client relationships through responsive communication and personalized support</li>
-                        <li>Handle inquiries, concerns, and complex requests while creating positive customer experiences</li>
+                        <li>Build strong client relationships through responsive communication</li>
+                        <li>Handle inquiries, concerns, and complex requests with positive outcomes</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <h3>Customer Experience & Sales Support</h3>
                     <ul>
-                        <li>Guide customers from initial inquiry through booking, follow-up, and after-sales support</li>
-                        <li>Identify customer needs, recommend tailored solutions, and turn interactions into lasting relationships</li>
+                        <li>Guide customers from initial inquiry through booking and after-sales support</li>
+                        <li>Identify customer needs and recommend tailored solutions</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <h3>Content & Visual Support</h3>
                     <ul>
-                        <li>Create simple, polished client-facing graphics and promotional materials to support sales</li>
-                        <li>Design customized maps, posters, newsletters, vouchers, certificates, signage, and travel documents</li>
+                        <li>Create simple, polished client-facing graphics and promotional materials</li>
+                        <li>Design customized maps, posters, newsletters, vouchers, and signage</li>
                     </ul>
                 </div>
-
-                <div class="service-card">
-                    <h3>Social Media Strategy</h3>
-                    <ul>
-                        <li>Customized content planning tailored specifically for your brand</li>
-                        <li>Videos, posts, scheduling, account engagement, and performance tracking</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- CALLOUT STATEMENT BANNER -->
-    <section class="statement-section">
-        <div class="container">
-            <div class="statement-text">
-                Think better.<br>
-                Work smarter.<br>
-                Grow stronger.
+    <!-- INTERACTIVE WORK PROCESS -->
+    <section class="container">
+        <div class="process-section">
+            <div class="section-header">
+                <h2 style="color: var(--primary-green);">WORK PROCESS</h2>
+                <p style="color: #666; margin-top: 5px;">"Understand first. Support with purpose."</p>
+            </div>
+            <div class="container">
+                <div class="process-steps">
+                    <div class="step-card active" onclick="selectStep(this, 'Learn the business, goals, audience, and main priorities before taking action.')">
+                        <div class="step-icon">🔍</div>
+                        <div class="step-title">Understand & Plan</div>
+                        <div class="step-desc">Learn business goals & priorities.</div>
+                    </div>
+                    <div class="step-card" onclick="selectStep(this, 'Create a structured approach and workflow to handle tasks efficiently.')">
+                        <div class="step-icon">📋</div>
+                        <div class="step-title">Organize & Execute</div>
+                        <div class="step-desc">Bring structure to everyday operations.</div>
+                    </div>
+                    <div class="step-card" onclick="selectStep(this, 'Maintain transparent communication across team members, clients, and partners.')">
+                        <div class="step-icon">⚙️</div>
+                        <div class="step-title">Communicate & Collaborate</div>
+                        <div class="step-desc">Manage tasks & coordinate projects.</div>
+                    </div>
+                    <div class="step-card" onclick="selectStep(this, 'Follow through, solve problems, and continuously refine processes for better results.')">
+                        <div class="step-icon">📈</div>
+                        <div class="step-title">Deliver & Improve</div>
+                        <div class="step-desc">Solve problems & follow through.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- WORK PROCESS -->
-    <section>
+    <!-- CREATIVE SIDE PROJECTS / GRAPHIC SHOWCASE -->
+    <section class="projects-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Work Process</h2>
-                <p style="color: #666; max-width: 600px; margin: 0 auto;">"Understand first. Support with purpose."</p>
+                <h2 style="color: var(--primary-green);">CREATIVE SIDE PROJECTS</h2>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>1. Understand & Plan</h4>
-                    <p>Learn the business, goals, audience, and main priorities.</p>
+            <div class="portfolio-gallery">
+                <div class="gallery-item" onclick="openModal('Busy Doesn\'t Always Mean Productive', 'A productivity and VA promotional graphic built for Remote Nomads.')">
+                    <div class="item-preview" style="background-color: #2B5A4B; color: #FFF;">PROD HACK</div>
+                    <div class="item-info">
+                        <h4>Productivity Hack Graphic</h4>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <h4>2. Organize & Execute</h4>
-                    <p>Create a clear approach based on what the business needs.</p>
+                <div class="gallery-item" onclick="openModal('San Francisco VIP Guidebook', 'Social media graphic created for Extranomical Tours highlighting local VIP experiences.')">
+                    <div class="item-preview" style="background-color: #D4A373; color: #FFF;">SF GUIDE</div>
+                    <div class="item-info">
+                        <h4>San Francisco VIP Tour Graphic</h4>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <h4>3. Communicate & Collaborate</h4>
-                    <p>Manage tasks, coordinate projects, communicate with clients, and bring ideas to life.</p>
-                </div>
-                <div class="process-step">
-                    <h4>4. Deliver & Improve</h4>
-                    <p>Follow through, solve problems, and make sure every detail is completed with purpose.</p>
+                <div class="gallery-item" onclick="openModal('Alcatraz Island Visitor Guide', 'Informational promotional graphic designed for travel booking clients.')">
+                    <div class="item-preview" style="background-color: #1C3F34; color: #FFF;">ALCATRAZ</div>
+                    <div class="item-info">
+                        <h4>Alcatraz Visitor Guide</h4>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SCROLLING TESTIMONIALS SECTION -->
+    <!-- TESTIMONIALS WITH FILTER TABS -->
     <section class="testimonials-section">
-        <div class="section-header">
-            <h2 class="section-title">Testimonials</h2>
-            <p style="color: #666; font-size: 0.9rem;">Hover over any testimonial to pause scrolling</p>
-        </div>
-        
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <!-- ORIGINAL SET OF TESTIMONIALS -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
-                    <div class="testimonial-author">— Hazel S. <span class="testimonial-role">| Assistant Manager, Extranomical Tours</span></div>
-                </div>
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--primary-green);">TESTIMONIALS</h2>
+            </div>
 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Chin has always been someone who goes above and beyond what is expected of her. She doesn't simply complete her responsibilities—she looks for ways to help, support the team, solve problems, and make things easier for everyone around her."</p>
-                    <div class="testimonial-author">— Arlene T. <span class="testimonial-role">| Manager, Extranomical Tours</span></div>
-                </div>
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showTestimonial('extranomical', this)">Extranomical Tours</button>
+                <button class="tab-btn" onclick="showTestimonial('tigerair', this)">Tiger Air</button>
+                <button class="tab-btn" onclick="showTestimonial('govtech', this)">GovTech Academy</button>
+                <button class="tab-btn" onclick="showTestimonial('wfs', this)">WFS</button>
+            </div>
 
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I worked very closely with her. Chin has excelled in her role as a customer service rep and even got promoted to be part of the back office team. Exhibiting one of the highest level of productivity I have ever seen."</p>
-                    <div class="testimonial-author">— Shobe I. <span class="testimonial-role">| Team Lead, Tiger Air</span></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Just wanted to give your team a shout-out! Chynna is absolutely on top of it! She's quick to respond and even quicker to troubleshoot and find solutions. It's truly great to be part of such a well-run team."</p>
-                    <div class="testimonial-author">— Finn F. <span class="testimonial-role">| Sales Manager, GovTech Academy</span></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself a rockstar @SB and we appreciate her."</p>
-                    <div class="testimonial-author">— Brenden B. <span class="testimonial-role">| Team Manager, WFS</span></div>
-                </div>
-
-                <!-- DUPLICATED SET FOR SEAMLESS INFINITE SCROLLING -->
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
-                    <div class="testimonial-author">— Hazel S. <span class="testimonial-role">| Assistant Manager, Extranomical Tours</span></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Chin has always been someone who goes above and beyond what is expected of her. She doesn't simply complete her responsibilities—she looks for ways to help, support the team, solve problems, and make things easier for everyone around her."</p>
-                    <div class="testimonial-author">— Arlene T. <span class="testimonial-role">| Manager, Extranomical Tours</span></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I worked very closely with her. Chin has excelled in her role as a customer service rep and even got promoted to be part of the back office team. Exhibiting one of the highest level of productivity I have ever seen."</p>
-                    <div class="testimonial-author">— Shobe I. <span class="testimonial-role">| Team Lead, Tiger Air</span></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Just wanted to give your team a shout-out! Chynna is absolutely on top of it! She's quick to respond and even quicker to troubleshoot and find solutions. It's truly great to be part of such a well-run team."</p>
-                    <div class="testimonial-author">— Finn F. <span class="testimonial-role">| Sales Manager, GovTech Academy</span></div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself a rockstar @SB and we appreciate her."</p>
-                    <div class="testimonial-author">— Brenden B. <span class="testimonial-role">| Team Manager, WFS</span></div>
-                </div>
+            <div class="testimonial-display" id="testimonial-box">
+                <p class="quote-text" id="quote-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
+                <p class="quote-author" id="quote-author">— Hazel S., Assistant Manager (Extranomical Tours)</p>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER & CONTACT ME -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-heading">
-                LET'S WORK TOGETHER TO BRING YOUR IDEAS TO LIFE, STRENGTHEN YOUR BUSINESS, AND KEEP THINGS MOVING FORWARD.
-            </div>
-            
-            <div class="contact-box">
-                <div class="contact-item">
-                    📞 <a href="tel:+639173172446">+63 917 317 2446</a>
-                </div>
-                <div class="contact-item">
-                    📧 <a href="mailto:chynnaroxas@gmail.com">chynnaroxas@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    🔗 <a href="https://www.linkedin.com/in/nicole-chynna-roxas/" target="_blank">LinkedIn Profile</a>
-                </div>
-            </div>
+    <!-- STATEMENT BANNER -->
+    <div class="container">
+        <div class="statement-banner">
+            <h2>UNDERSTAND FIRST.<br>SUPPORT WITH PURPOSE.</h2>
+        </div>
+    </div>
 
-            <p class="copyright">© 2026 Nicole Chynna Roxas. Portfolio Edition 2026.</p>
+    <!-- FOOTER / CONTACT ME -->
+    <footer>
+        <div class="container">
+            <h2 style="margin-bottom: 25px; font-size: 1.8rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                LET'S WORK TOGETHER TO BRING YOUR IDEAS TO LIFE, STRENGTHEN YOUR BUSINESS, AND KEEP THINGS MOVING FORWARD.
+            </h2>
+            <div class="contact-card">
+                <div class="contact-item">📞 <a href="tel:+639776135391">+63 977 613 5391</a></div>
+                <div class="contact-item">📧 <a href="mailto:chynnaroxas@gmail.com">chynnaroxas@gmail.com</a></div>
+                <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/nicole-chynna-roxas/" target="_blank">LinkedIn Profile</a></div>
+            </div>
+            <p style="opacity: 0.6; font-size: 0.85rem;">© 2026 Chynna Roxas. Administrative Support Specialist Portfolio.</p>
         </div>
     </footer>
 
+    <!-- MODAL WINDOW FOR SIDE PROJECTS -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" style="color: var(--primary-green); margin-bottom: 15px;"></h3>
+            <p id="modalDesc" style="color: #444; font-size: 1rem;"></p>
+        </div>
+    </div>
+
+    <script>
+        // Interactive Step Selector
+        function selectStep(element, description) {
+            document.querySelectorAll('.step-card').forEach(card => card.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Testimonial Filtering Data
+        const testimonials = {
+            extranomical: {
+                text: `"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."`,
+                author: "— Hazel S., Assistant Manager (Extranomical Tours)"
+            },
+            tigerair: {
+                text: `"I worked very closely with her. Chin has excelled in her role as a customer service rep and even got promoted to be part of the back office team. Exhibiting one of the highest level of productivity I have ever seen."`,
+                author: "— Shobe I., Team Lead (Tiger Air)"
+            },
+            govtech: {
+                text: `"Just wanted to give your team a shout-out! Chynna is absolutely on top of it! She's quick to respond and even quicker to troubleshoot and find solutions. It's truly great to be part of such a well-run team."`,
+                author: "— Finn F., Sales Manager (GovTech Academy)"
+            },
+            wfs: {
+                text: `"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself a rockstar @SB and we appreciate her."`,
+                author: "— Brenden B., Team Manager (WFS)"
+            }
+        };
+
+        function showTestimonial(key, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            document.getElementById('quote-text').innerText = testimonials[key].text;
+            document.getElementById('quote-author').innerText = testimonials[key].author;
+        }
+
+        // Project Modal Logic
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
