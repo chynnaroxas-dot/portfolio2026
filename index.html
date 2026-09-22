@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicole Chynna Roxas | Client Success Specialist & Executive Support</title>
     <style>
+        /* GLOCK GROTESK 2.0 FONT DEFINITION */
+        /* Update the url(...) paths below to point to where your font files are hosted */
+        @font-face {
+            font-family: 'Glock Grotesk 2.0';
+            src: url('fonts/GlockGrotesk2.0-Bold.woff2') format('woff2'),
+                 url('fonts/GlockGrotesk2.0-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* COLOR PALETTE FROM PORTFOLIO */
         :root {
             --primary-bg: #1C3F34;      /* Deep Forest Green */
@@ -28,6 +39,7 @@
             background-color: var(--canvas-bg);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -41,21 +53,31 @@
             background-color: var(--primary-bg);
             color: var(--text-light);
             padding: 70px 20px 90px 20px;
-            text-align: center;
+        }
+
+        .hero-flex-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
         }
 
         /* PROFILE PHOTO STYLING */
         .profile-photo-container {
-            margin-bottom: 25px;
+            flex-shrink: 0;
         }
 
         .profile-photo {
-            width: 170px;
-            height: 170px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--soft-text);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-text-content {
+            flex-grow: 1;
         }
 
         .header-tag {
@@ -67,24 +89,26 @@
             font-weight: 600;
         }
 
+        /* NAME TITLE STYLED WITH GLOCK GROTESK 2.0 */
         h1 {
-            font-size: 3rem;
+            font-family: 'Glock Grotesk 2.0', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 2.8rem;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
             line-height: 1.1;
+            font-weight: 700;
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--soft-text);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .hero-banner {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            max-width: 750px;
-            margin: 0 auto 25px auto;
+            margin-bottom: 20px;
             line-height: 1.4;
             letter-spacing: 0.5px;
         }
@@ -92,17 +116,16 @@
         .availability-badge {
             display: inline-block;
             background-color: rgba(255, 255, 255, 0.15);
-            padding: 8px 18px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #FFFFFF;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         /* ACTION BUTTONS */
         .header-buttons {
             display: flex;
-            justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
@@ -270,27 +293,21 @@
             left: 0;
         }
 
-        /* GOOGLE CALENDAR SECTION */
-        .calendar-section {
-            background-color: #E2E2DA;
+        /* BANNER STATEMENT SECTION */
+        .statement-section {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
             text-align: center;
+            padding: 80px 20px;
         }
 
-        .calendar-wrapper {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            max-width: 850px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .calendar-iframe {
-            width: 100%;
-            height: 600px;
-            border: 0;
-            border-radius: 8px;
+        .statement-text {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            color: var(--soft-text);
+            text-transform: uppercase;
         }
 
         /* WORK PROCESS */
@@ -319,11 +336,30 @@
             color: #555;
         }
 
-        /* TESTIMONIALS */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* CONTINUOUS SCROLLING TESTIMONIALS */
+        .testimonials-section {
+            background-color: #E2E2DA;
+            overflow: hidden;
+            padding: 70px 0;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+        }
+
+        .marquee-track {
+            display: flex;
             gap: 25px;
+            width: max-content;
+            animation: scrollFromRight 35s linear infinite;
+        }
+
+        .marquee-container:hover .marquee-track {
+            animation-play-state: paused;
         }
 
         .testimonial-card {
@@ -331,6 +367,8 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            width: 350px;
+            flex-shrink: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -354,6 +392,15 @@
             font-weight: 400;
             color: #666;
             font-size: 0.85rem;
+        }
+
+        @keyframes scrollFromRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* FOOTER / CONTACT */
@@ -401,11 +448,19 @@
             margin-top: 50px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .hero-flex-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-buttons {
+                justify-content: center;
+            }
             h1 { font-size: 2.2rem; }
             .hero-banner { font-size: 1.1rem; }
             .about-box { padding: 25px; }
-            .calendar-iframe { height: 450px; }
+            .testimonial-card { width: 290px; }
+            .statement-text { font-size: 2rem; }
         }
     </style>
 </head>
@@ -414,26 +469,31 @@
     <!-- HERO HEADER -->
     <header>
         <div class="container">
-            <!-- PROFILE PHOTO -->
-            <div class="profile-photo-container">
-                <img src="profile.jpg" alt="Nicole Chynna Roxas" class="profile-photo" onerror="this.src='https://via.placeholder.com/170?text=Chynna+Roxas'">
-            </div>
+            <div class="hero-flex-container">
+                <!-- PROFILE PHOTO ON LEFT SIDE -->
+                <div class="profile-photo-container">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHGKwXdgPaqPQ/profile-displayphoto-scale_400_400/B4DaDEhovOKsAg-/0/1790003548619?e=1791417600&v=beta&t=hZN3vk6c0DT9Hzebh7ue6f9ROjBUPfKzLi0JvPzrEQY" alt="Nicole Chynna Roxas" class="profile-photo">
+                </div>
 
-            <div class="header-tag">Portfolio 2026 Edition</div>
-            <h1>NICOLE CHYNNA ROXAS</h1>
-            <div class="subtitle">Client Success Specialist | Executive & Business Operations</div>
-            <div class="hero-banner">
-                HELPING EXECUTIVES AND BUSINESSES STAY ORGANIZED, EFFICIENT, AND CLIENT-FOCUSED.
-            </div>
-            <div>
-                <span class="availability-badge">Available for Remote Opportunities</span>
-            </div>
+                <!-- TEXT AND BUTTONS ON RIGHT SIDE -->
+                <div class="hero-text-content">
+                    <div class="header-tag">Portfolio 2026 Edition</div>
+                    <h1>NICOLE CHYNNA ROXAS</h1>
+                    <div class="subtitle">Client Success Specialist | Executive & Business Operations</div>
+                    <div class="hero-banner">
+                        HELPING EXECUTIVES AND BUSINESSES STAY ORGANIZED, EFFICIENT, AND CLIENT-FOCUSED.
+                    </div>
+                    <div>
+                        <span class="availability-badge">Available for Remote Opportunities</span>
+                    </div>
 
-            <!-- CLICKABLE PORTFOLIO, RESUME, AND CALENDAR BUTTONS -->
-            <div class="header-buttons">
-                <a href="https://docs.google.com/document/d/1zQVMOPo9lKavmMnPfhKnAb-WStSBSO3QhkEJdzu14Ow/edit?usp=sharing" target="_blank" class="btn btn-primary">📄 View Resume</a>
-                <a href="https://canva.link/chynnaroaxs" target="_blank" class="btn btn-secondary">📁 View Canva Portfolio</a>
-                <a href="https://calendar.app.google/yEeHbqUXLboeQCgx8" target="_blank" class="btn btn-primary">📅 Book Meeting</a>
+                    <!-- CLICKABLE PORTFOLIO, RESUME, AND CALENDAR BUTTONS -->
+                    <div class="header-buttons">
+                        <a href="https://docs.google.com/document/d/1zQVMOPo9lKavmMnPfhKnAb-WStSBSO3QhkEJdzu14Ow/edit?usp=sharing" target="_blank" class="btn btn-primary">📄 View Resume</a>
+                        <a href="https://canva.link/chynnaroaxs" target="_blank" class="btn btn-secondary">📁 View Canva Portfolio</a>
+                        <a href="https://calendar.app.google/yEeHbqUXLboeQCgx8" target="_blank" class="btn btn-primary">📅 Book Meeting</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -544,16 +604,13 @@
         </div>
     </section>
 
-    <!-- GOOGLE CALENDAR EMBED SECTION -->
-    <section class="calendar-section">
+    <!-- CALLOUT STATEMENT BANNER -->
+    <section class="statement-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Schedule a Meeting</h2>
-                <p style="color: #555; margin-bottom: 20px;">Select a time directly on my Google Calendar Appointment Schedule below or click the button to open directly.</p>
-                <a href="https://calendar.app.google/yEeHbqUXLboeQCgx8" target="_blank" class="btn btn-primary" style="margin-bottom: 25px;">📅 Open Direct Booking Page</a>
-            </div>
-            <div class="calendar-wrapper">
-                <iframe src="https://calendar.app.google/yEeHbqUXLboeQCgx8" class="calendar-iframe" scrolling="yes"></iframe>
+            <div class="statement-text">
+                Think better.<br>
+                Work smarter.<br>
+                Grow stronger.
             </div>
         </div>
     </section>
@@ -586,14 +643,16 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section style="background-color: #E2E2DA;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Testimonials</h2>
-            </div>
-            <div class="testimonials-grid">
-                
+    <!-- SCROLLING TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2 class="section-title">Testimonials</h2>
+            <p style="color: #666; font-size: 0.9rem;">Hover over any testimonial to pause scrolling</p>
+        </div>
+        
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- ORIGINAL SET OF TESTIMONIALS -->
                 <div class="testimonial-card">
                     <p class="testimonial-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
                     <div class="testimonial-author">— Hazel S. <span class="testimonial-role">| Assistant Manager, Extranomical Tours</span></div>
@@ -619,6 +678,31 @@
                     <div class="testimonial-author">— Brenden B. <span class="testimonial-role">| Team Manager, WFS</span></div>
                 </div>
 
+                <!-- DUPLICATED SET FOR SEAMLESS INFINITE SCROLLING -->
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks and actively helps manage the team in her role as Senior TC... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
+                    <div class="testimonial-author">— Hazel S. <span class="testimonial-role">| Assistant Manager, Extranomical Tours</span></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Chin has always been someone who goes above and beyond what is expected of her. She doesn't simply complete her responsibilities—she looks for ways to help, support the team, solve problems, and make things easier for everyone around her."</p>
+                    <div class="testimonial-author">— Arlene T. <span class="testimonial-role">| Manager, Extranomical Tours</span></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I worked very closely with her. Chin has excelled in her role as a customer service rep and even got promoted to be part of the back office team. Exhibiting one of the highest level of productivity I have ever seen."</p>
+                    <div class="testimonial-author">— Shobe I. <span class="testimonial-role">| Team Lead, Tiger Air</span></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Just wanted to give your team a shout-out! Chynna is absolutely on top of it! She's quick to respond and even quicker to troubleshoot and find solutions. It's truly great to be part of such a well-run team."</p>
+                    <div class="testimonial-author">— Finn F. <span class="testimonial-role">| Sales Manager, GovTech Academy</span></div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself a rockstar @SB and we appreciate her."</p>
+                    <div class="testimonial-author">— Brenden B. <span class="testimonial-role">| Team Manager, WFS</span></div>
+                </div>
             </div>
         </div>
     </section>
