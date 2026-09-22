@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicole Chynna O. Roxas | Portfolio</title>
+    <title>Nicole Chynna Roxas | Portfolio</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --card-border: #1f2937;
-            --accent-green: #10b981;
-            --accent-green-hover: #059669;
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            --badge-bg: #064e3b;
-            --badge-text: #6ee7b7;
+            --bg-color: #EFEFE8;           /* Warm Canvas Background */
+            --accent-green: #1C3F34;       /* Deep Forest Green */
+            --text-dark: #111111;         /* Charcoal Black */
+            --badge-bg: #D9D9D9;         /* Light Slate Grey */
+            --badge-text: #111111;       /* Charcoal Black */
+            --border-color: rgba(0, 0, 0, 0.1); /* Soft Subtle Border */
         }
 
         * {
@@ -24,57 +21,96 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth; /* Enables smooth transition when clicking nav links */
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-dark);
             line-height: 1.6;
-            padding: 2rem 1rem;
-            max-width: 1100px;
+            padding: 5rem 1.5rem 3rem; /* Adjusted top padding to prevent content from hiding under fixed navbar */
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        /* Fixed Header Navigation Menu */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(239, 239, 232, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.9rem 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
         }
 
         /* Header / Hero Section */
         header {
             text-align: center;
-            padding: 2.5rem 1rem 3rem;
-            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 1rem 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .status-badge {
             display: inline-block;
             background-color: var(--badge-bg);
             color: var(--badge-text);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.4rem 1.1rem;
             border-radius: 20px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
         }
 
         h1.name {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            color: var(--text-dark);
         }
 
         .subtitle {
             font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1.75rem;
+            font-weight: 600;
         }
 
-        /* Requested Statement */
+        /* Hero Statement */
         .bold-statement {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             line-height: 1.4;
             margin: 1.5rem 0 2rem;
-            color: var(--accent-green);
+            color: var(--text-dark);
         }
 
         .bold-statement span {
@@ -94,118 +130,345 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
+            padding: 0.75rem 1.3rem;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            border: 1px solid var(--card-border);
-            background-color: var(--card-bg);
-            color: var(--text-main);
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
         }
 
         .btn-primary {
             background-color: var(--accent-green);
+            color: #FFFFFF;
             border-color: var(--accent-green);
-            color: #ffffff;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            border-color: var(--accent-green);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-green-hover);
-            border-color: var(--accent-green-hover);
+            background-color: #244F41;
+            border-color: #244F41;
         }
 
         /* Section Layouts */
         section {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 0;
+            border-top: 1px.solid var(--border-color);
         }
 
         .section-title {
-            font-size: 1.75rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             margin-bottom: 2rem;
             text-align: center;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
         }
 
-        /* Grid Cards Layout */
+        /* Seamless Minimalist Grid */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
 
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
+        /* Seamless Cards (No background fill) */
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
+            border-radius: 16px;
             padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.25s ease;
         }
 
-        .card h3 {
-            font-size: 1.15rem;
-            color: var(--accent-green);
-            margin-bottom: 0.5rem;
+        .card:hover {
+            transform: translateY(-3px);
         }
 
-        .card p, .card ul {
+        /* Metric Spotlight Cards */
+        .metric-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .metric-badge {
+            background-color: var(--badge-bg);
+            color: var(--text-dark);
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .metric-label {
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: var(--accent-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .card ul {
+        /* Professional Experience Timeline Styles */
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .experience-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: transform 0.25s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-role {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            background-color: var(--badge-bg);
+            padding: 0.2rem 0.75rem;
+            border-radius: 12px;
+        }
+
+        .exp-company {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #444444;
+            margin-bottom: 1rem;
+        }
+
+        .exp-bullets {
             list-style-type: none;
             padding-left: 0;
         }
 
-        .card ul li {
-            margin-bottom: 0.5rem;
+        .exp-bullets li {
             position: relative;
-            padding-left: 1.2rem;
+            padding-left: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
         }
 
-        .card ul li::before {
+        .exp-bullets li::before {
             content: "•";
+            position: absolute;
+            left: 0.2rem;
             color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Seamless Interactive Tabs Component */
+        .interactive-container {
+            border-radius: 16px;
+            padding: 1rem 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+        }
+
+        .tab-btn {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-green);
+            color: #FFFFFF;
+            border-color: var(--accent-green);
+        }
+
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.35s ease-in-out;
+            padding: 0.5rem 0;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .tab-panel h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .tab-panel p {
+            font-size: 1rem;
+            color: #444444;
+            margin-bottom: 1.25rem;
+        }
+
+        .tab-panel ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .tab-panel ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .tab-panel ul li::before {
+            content: "✓";
             position: absolute;
             left: 0;
+            color: var(--accent-green);
             font-weight: bold;
         }
 
-        /* Metric Spotlight Card */
-        .metric-card {
-            text-align: center;
-            background: linear-gradient(135deg, #111827 0%, #064e3b 100%);
-            border: 1px solid var(--accent-green);
+        /* Seamless Work Process Component */
+        .stepper-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .metric-number {
-            font-size: 2.8rem;
+        .step-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-green);
+        }
+
+        .step-card.active {
+            border-color: var(--accent-green);
+        }
+
+        .step-number {
+            background-color: var(--badge-bg);
+            color: var(--text-dark);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.2rem;
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
         }
 
-        .metric-label {
-            font-size: 0.9rem;
-            color: var(--badge-text);
-            text-transform: uppercase;
-            font-weight: 600;
+        .step-card.active .step-number {
+            background-color: var(--accent-green);
+            color: #FFFFFF;
         }
 
-        /* Testimonials Infinite Carousel (Right to Left) */
+        .step-title {
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .process-display {
+            color: var(--text-dark);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-green);
+            min-height: 120px;
+        }
+
+        .process-panel {
+            display: none;
+            animation: fadeIn 0.35s ease-in-out;
+        }
+
+        .process-panel.active {
+            display: block;
+        }
+
+        .process-panel h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .process-panel p {
+            font-size: 1rem;
+            color: #444444;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Testimonials Infinite Carousel */
         .carousel-container {
             overflow: hidden;
             width: 100%;
@@ -227,11 +490,10 @@
         }
 
         .testimonial-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            padding: 1.5rem;
-            width: 350px;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            width: 340px;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
@@ -240,21 +502,22 @@
 
         .testimonial-text {
             font-size: 0.95rem;
-            color: var(--text-main);
+            color: #444444;
             font-style: italic;
             margin-bottom: 1.25rem;
             line-height: 1.5;
         }
 
         .testimonial-author {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            color: var(--accent-green);
+            color: var(--text-dark);
         }
 
         .testimonial-role {
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--accent-green);
+            font-weight: 600;
         }
 
         @keyframes scrollRightToLeft {
@@ -266,30 +529,103 @@
             }
         }
 
-        /* Footer */
+        /* Tools & Systems Environment Styles */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-category-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.75rem;
+            background: transparent;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .tool-category-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-green);
+        }
+
+        .tool-category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tool-category-title i {
+            color: var(--accent-green);
+            font-size: 1.2rem;
+        }
+
+        .tool-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-pill {
+            background-color: var(--badge-bg);
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 12px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .tool-pill:hover {
+            background-color: var(--accent-green);
+            color: #FFFFFF;
+        }
+
+        /* Footer Contact */
         footer {
             text-align: center;
             padding: 3rem 1rem 1rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 600px) {
-            h1.name { font-size: 2.2rem; }
-            .bold-statement { font-size: 1.3rem; }
+            h1.name { font-size: 2.3rem; }
+            .bold-statement { font-size: 1.25rem; }
             .testimonial-card { width: 280px; }
+            .tab-buttons { flex-direction: column; }
+            .tab-btn { width: 100%; justify-content: center; }
+            .exp-header { flex-direction: column; align-items: flex-start; }
+            .nav-links { gap: 1rem; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Fixed Header Menu Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+    </nav>
+
     <!-- Header / Hero Section -->
     <header>
         <div class="status-badge">Available for Remote Opportunities</div>
-        <h1 class="name">Nicole Chynna O. Roxas</h1>
+        <h1 class="name">Nicole Chynna Roxas</h1>
         <p class="subtitle">Client Success Specialist | Executive & Business Operations</p>
         
-        <!-- Requested Profile Statement -->
+        <!-- Profile Statement -->
         <div class="bold-statement">
             <span>Support with purpose.</span>
             <span>Create with intention.</span>
@@ -314,75 +650,246 @@
     </header>
 
     <!-- Key Metrics & Highlights Section -->
-    <section>
+    <section id="achievements">
         <h2 class="section-title">Key Impact & Achievements</h2>
         <div class="grid-3">
             <div class="card metric-card">
-                <div class="metric-number">7+</div>
+                <div class="metric-badge">7+</div>
                 <div class="metric-label">Years Experience</div>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-main);">Across sales, customer experience, executive support, & business operations.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #555555;">Across sales, customer experience, executive support, & business operations.</p>
             </div>
             <div class="card metric-card">
-                <div class="metric-number">60%</div>
+                <div class="metric-badge">60%</div>
                 <div class="metric-label">Sales Growth</div>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-main);">Contributed over a three-year period at Extranomical Tours.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #555555;">Contributed over a three-year period at Extranomical Tours.</p>
             </div>
             <div class="card metric-card">
-                <div class="metric-number">2026 MVP</div>
-                <div class="metric-label">GovTech Academy Award</div>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-main);">Recognized for outstanding reliability, initiative, & operational impact.</p>
+                <div class="metric-badge">MVP</div>
+                <div class="metric-label">GovTech Academy 2026</div>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #555555;">Awarded for outstanding reliability, initiative, & operational impact.</p>
             </div>
         </div>
     </section>
 
-    <!-- My Approach & Services -->
-    <section>
+    <!-- Professional Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-timeline">
+            
+            <!-- GovTech Academy -->
+            <div class="experience-card">
+                <div class="exp-header">
+                    <span class="exp-role">Executive Assistant to CEO</span>
+                    <span class="exp-date">Sep 2025 – Present</span>
+                </div>
+                <div class="exp-company">GovTech Academy | Atlanta, GA</div>
+                <ul class="exp-bullets">
+                    <li>Provide high-level executive and administrative support to the CEO, managing priorities, schedules, and leadership communications.</li>
+                    <li>Drive operational projects from planning to execution, ensuring clear stakeholder alignment and on-time deliverable execution.</li>
+                    <li>Proactively streamline workflows and resolve operational bottlenecks to maintain day-to-day business efficiency.</li>
+                </ul>
+            </div>
+
+            <!-- Extranomical Tours -->
+            <div class="experience-card">
+                <div class="exp-header">
+                    <span class="exp-role">Charter Sales Manager</span>
+                    <span class="exp-date">Mar 2022 – Aug 2026</span>
+                </div>
+                <div class="exp-company">Extranomical Tours | San Francisco, CA</div>
+                <ul class="exp-bullets">
+                    <li>Drove ~60% of total company sales growth over 3 years through consultative selling and proactive client acquisition.</li>
+                    <li>Managed end-to-end sales cycles and built custom itineraries, vendor arrangements, and travel itineraries for high-value clients.</li>
+                    <li>Designed operational visual assets including maps, newsletters, custom travel documents, and multi-CRM reservation workflows.</li>
+                </ul>
+            </div>
+
+            <!-- Farmacia Hortaleza -->
+            <div class="experience-card">
+                <div class="exp-header">
+                    <span class="exp-role">Business Owner</span>
+                    <span class="exp-date">Jan 2023 – Present</span>
+                </div>
+                <div class="exp-company">Farmacia Hortaleza | Cainta, Philippines</div>
+                <ul class="exp-bullets">
+                    <li>Oversee daily sales operations, inventory control, regulatory compliance, and general business coordination.</li>
+                    <li>Implement targeted marketing initiatives to expand customer base and foster sustained local growth.</li>
+                </ul>
+            </div>
+
+            <!-- TigerAir -->
+            <div class="experience-card">
+                <div class="exp-header">
+                    <span class="exp-role">Customer Service Multi-Skilled Representative</span>
+                    <span class="exp-date">Jan 2019 – Apr 2020</span>
+                </div>
+                <div class="exp-company">TigerAir | Australia</div>
+                <ul class="exp-bullets">
+                    <li>Handled escalated customer inquiries, supervisor calls, sensitive refund processing, and complex travel accommodations.</li>
+                    <li>Promoted to Multi-Skilled Agent in recognition of strong conflict-resolution skills and empathetic customer support.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TABBED SECTION: My Expertise & Services -->
+    <section id="services">
         <h2 class="section-title">My Expertise & Services</h2>
-        <div class="grid-4">
-            <div class="card">
-                <h3>Executive Support</h3>
-                <p>Managing executive schedules, high-level communications, priorities, calendar coordination, and day-to-day administrative details.</p>
+        <div class="interactive-container">
+            <!-- Navigation Tabs -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-executive')">
+                    <i class="fa-solid fa-user-tie"></i> Executive & Administrative Support
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-operations')">
+                    <i class="fa-solid fa-briefcase"></i> Business Operations & Sales
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-client')">
+                    <i class="fa-solid fa-handshake"></i> Client Success & Relationship
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-content')">
+                    <i class="fa-solid fa-palette"></i> Content & Visual Support
+                </button>
             </div>
-            <div class="card">
-                <h3>Business Operations</h3>
-                <p>Streamlining operational workflows, managing inventory, coordinating tasks across teams, and improving process execution.</p>
+
+            <!-- Content Panels -->
+            <div id="tab-executive" class="tab-panel active">
+                <h3>Executive & Administrative Support</h3>
+                <p>Organizing tasks, schedules, communications, and priorities to keep executive leadership aligned.</p>
+                <ul>
+                    <li>Manage high-level calendars, communications, and day-to-day priorities.</li>
+                    <li>Coordinate projects, task follow-ups, and documentation to maintain momentum.</li>
+                    <li>Provide proactive support to ensure leadership can focus on strategic growth.</li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>Client Success & Sales</h3>
-                <p>Managing the full sales cycle, outbound prospecting, customer relationship management, charter consultations, and after-sales care.</p>
+
+            <div id="tab-operations" class="tab-panel">
+                <h3>Business Operations & Sales</h3>
+                <p>Streamlining daily workflows and supporting business revenue growth through strategic coordination.</p>
+                <ul>
+                    <li>Support daily operations, improve processes, and coordinate cross-functional teams.</li>
+                    <li>Drive sales growth through client consultations, personalized solutions, and lead management.</li>
+                    <li>Oversee inventory, reservation systems, and multi-platform CRM management.</li>
+                </ul>
             </div>
-            <div class="card">
+
+            <div id="tab-client" class="tab-panel">
+                <h3>Client Success & Relationship Management</h3>
+                <p>Building strong connections and managing customer experiences from initial inquiry to long-term loyalty.</p>
+                <ul>
+                    <li>Responsive communication and empathetic handling of complex customer concerns.</li>
+                    <li>Guide prospective clients through consultations, custom proposals, and booking cycles.</li>
+                    <li>Deliver exceptional after-sales support to retain partners and encourage repeat business.</li>
+                </ul>
+            </div>
+
+            <div id="tab-content" class="tab-panel">
                 <h3>Content & Visual Support</h3>
-                <p>Designing customized maps, posters, newsletters, travel itineraries, vouchers, certificates, and client-facing graphics.</p>
+                <p>Creating clear, engaging visual assets and customized documents that strengthen brand communication.</p>
+                <ul>
+                    <li>Design client-facing graphics, promotional materials, and marketing assets.</li>
+                    <li>Create custom maps, newsletters, posters, vouchers, travel documents, and signage.</li>
+                    <li>Combine visual creativity with organizational structure to elevate marketing collateral.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Work Process Section -->
+    <!-- Tools & Systems Section -->
+    <section>
+        <h2 class="section-title">Tools & Systems Environment</h2>
+        <div class="tools-grid">
+            
+            <!-- CRM & Pipeline Management -->
+            <div class="tool-category-card">
+                <div class="tool-category-title">
+                    <i class="fa-solid fa-address-book"></i> CRM & Pipeline Management
+                </div>
+                <ul class="tool-list">
+                    <li><span class="tool-pill">Airtable</span></li>
+                    <li><span class="tool-pill">HubSpot</span></li>
+                    <li><span class="tool-pill">Salesforce</span></li>
+                    <li><span class="tool-pill">Zendesk</span></li>
+                </ul>
+            </div>
+
+            <!-- Executive & Productivity -->
+            <div class="tool-category-card">
+                <div class="tool-category-title">
+                    <i class="fa-solid fa-laptop-code"></i> Executive & Productivity
+                </div>
+                <ul class="tool-list">
+                    <li><span class="tool-pill">Google Workspace</span></li>
+                    <li><span class="tool-pill">Microsoft 365</span></li>
+                    <li><span class="tool-pill">Notion</span></li>
+                    <li><span class="tool-pill">Slack</span></li>
+                    <li><span class="tool-pill">Asana</span></li>
+                </ul>
+            </div>
+
+            <!-- Design & Creative Media -->
+            <div class="tool-category-card">
+                <div class="tool-category-title">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Design & Creative Media
+                </div>
+                <ul class="tool-list">
+                    <li><span class="tool-pill">Canva Pro</span></li>
+                    <li><span class="tool-pill">Figma</span></li>
+                    <li><span class="tool-pill">Adobe Suite</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE STEPPER SECTION: Work Process -->
     <section>
         <h2 class="section-title">Work Process</h2>
-        <div class="grid-4">
-            <div class="card">
-                <h3>1. Understand & Plan</h3>
-                <p>Learn the business, target audience, goals, and key priorities to set clear foundations.</p>
+        
+        <!-- Step Selector Cards -->
+        <div class="stepper-nav">
+            <div class="step-card active" onclick="switchStep(event, 'step-1')">
+                <div class="step-number">1</div>
+                <div class="step-title">Understand & Plan</div>
             </div>
-            <div class="card">
-                <h3>2. Organize & Execute</h3>
-                <p>Establish practical approaches, set actionable workflows, and manage daily requirements efficiently.</p>
+            <div class="step-card" onclick="switchStep(event, 'step-2')">
+                <div class="step-number">2</div>
+                <div class="step-title">Organize & Execute</div>
             </div>
-            <div class="card">
-                <h3>3. Communicate</h3>
-                <p>Maintain continuous, transparent collaboration across stakeholders, clients, and internal teams.</p>
+            <div class="step-card" onclick="switchStep(event, 'step-3')">
+                <div class="step-number">3</div>
+                <div class="step-title">Communicate</div>
             </div>
-            <div class="card">
-                <h3>4. Deliver & Improve</h3>
-                <p>Follow through on deliverables, resolve obstacles, and continually refine business processes.</p>
+            <div class="step-card" onclick="switchStep(event, 'step-4')">
+                <div class="step-number">4</div>
+                <div class="step-title">Deliver & Improve</div>
+            </div>
+        </div>
+
+        <!-- Step Content Display -->
+        <div class="process-display">
+            <div id="step-1" class="process-panel active">
+                <h3>Phase 1: Understand & Plan</h3>
+                <p>Learn the business context, target audience, priorities, and goals to build a grounded strategic roadmap.</p>
+            </div>
+            <div id="step-2" class="process-panel">
+                <h3>Phase 2: Organize & Execute</h3>
+                <p>Bring structure to tasks and projects, establishing actionable workflows tailored to business operational needs.</p>
+            </div>
+            <div id="step-3" class="process-panel">
+                <h3>Phase 3: Communicate & Collaborate</h3>
+                <p>Maintain transparent, ongoing coordination across clients, teams, executive leadership, and external partners.</p>
+            </div>
+            <div id="step-4" class="process-panel">
+                <h3>Phase 4: Deliver & Improve</h3>
+                <p>Follow through with precision, solve emerging challenges, and continuously refine processes for ongoing quality.</p>
             </div>
         </div>
     </section>
 
     <!-- Infinite Carousel Testimonials Section -->
-    <section>
+    <section id="testimonials">
         <h2 class="section-title">Testimonials & Endorsements</h2>
         
         <div class="carousel-container">
@@ -426,14 +933,14 @@
 
                 <!-- Testimonial 5 -->
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself a rockstar... and we appreciate her."</p>
+                    <p class="testimonial-text">"When our clients have a stakeholder like Chynna it makes things run so much smoother. You got yourself an absolute rockstar!"</p>
                     <div>
-                        <p class="testimonial-author">Brenden B.</p>
-                        <p class="testimonial-role">Team Manager, WFS</p>
+                        <p class="testimonial-author">Partner Client</p>
+                        <p class="testimonial-role">External Stakeholder</p>
                     </div>
                 </div>
 
-                <!-- Duplicated Set for Smooth Continuous Loop -->
+                <!-- Duplicated Set for Continuous Loop -->
                 <div class="testimonial-card">
                     <p class="testimonial-text">"A shout-out goes to @Chin for her dedication and commendable demeanor at work! She consistently jumps in to take on assigned tasks... Her initiative, reliability, and willingness to support others do not go unnoticed."</p>
                     <div>
@@ -459,7 +966,7 @@
                 </div>
 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Chynna is absolutely on top of it! She's quick to respond and even quicker to troubleshoot and find solutions. Her dedication and efficiency really make a difference!"</p>
+                    <p class="testimonial-text">"Chynna is adaptable, quick to respond, and always ready to troubleshoot or find solutions. Her dedication and efficiency really make a difference!"</p>
                     <div>
                         <p class="testimonial-author">Finn F.</p>
                         <p class="testimonial-role">Sales Manager, Extranomical Tours</p>
@@ -478,11 +985,36 @@
         </div>
     </section>
 
-    <!-- Footer Contact -->
+    <!-- Footer -->
     <footer>
-        <p>Let's work together to bring your ideas to life and keep things moving forward.</p>
-        <p style="margin-top: 0.5rem; color: var(--accent-green);">chynnaroxas@gmail.com | Taytay, Rizal Philippines</p>
+        <p>&copy; 2026 Nicole Chynna Roxas. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Tabbed Section Switcher
+        function switchTab(evt, tabId) {
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Stepper / Work Process Switcher
+        function switchStep(evt, stepId) {
+            const panels = document.querySelectorAll('.process-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            const cards = document.querySelectorAll('.step-card');
+            cards.forEach(card => card.classList.remove('active'));
+
+            document.getElementById(stepId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
